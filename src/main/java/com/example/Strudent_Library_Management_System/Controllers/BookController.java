@@ -15,7 +15,13 @@ public class BookController {
     @Autowired
     BookService bookService;
     @PostMapping("/add_book")
-    public String addBook(@RequestBody Books books){
-        return bookService.addBook(books);
+    public String addBook(@RequestBody Books books) throws Exception {
+        try{
+            return bookService.addBook(books);
+        }
+        catch (Exception exception){
+            return "Something wrong has happened"+exception.getMessage();
+        }
+
     }
 }

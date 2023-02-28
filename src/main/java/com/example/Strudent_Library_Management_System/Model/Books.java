@@ -3,6 +3,8 @@ package com.example.Strudent_Library_Management_System.Model;
 import com.example.Strudent_Library_Management_System.ENUMS.Genre;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="Book_info")
@@ -48,12 +50,22 @@ public class Books {
     public Books() {
     }
 
+    @OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
+    private List<Transaction> transactionList = new ArrayList<>();
     public Books(int id, String name, int price, Genre genre, Author author) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.genre = genre;
         this.author = author;
+    }
+
+    public List<Transaction> getTransactionList() {
+        return transactionList;
+    }
+
+    public void setTransactionList(List<Transaction> transactionList) {
+        this.transactionList = transactionList;
     }
 
     public Author getAuthor() {

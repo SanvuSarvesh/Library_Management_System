@@ -22,6 +22,6 @@ public class TransactionController {
     @GetMapping("/transaction_info")
     public String getTransactionInfo(@RequestParam("bookId") Integer bookId, @RequestParam
             ("cardId") Integer cardId){
-        return transactionService.getTransactionDetails(bookId,cardId);
+        return transactionService.getTransactionInfo(bookId,cardId);
     }
 }

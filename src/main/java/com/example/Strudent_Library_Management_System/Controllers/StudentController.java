@@ -22,7 +22,7 @@ public class StudentController {
     public String findNameByEmail(@RequestParam ("email") String email){
         return studentService.findNameByEmail(email);
     }
-    @GetMapping("/get_studentsBycountry")
+    @GetMapping("/get_studentsByCountry")
     public List<Student> findNameByCountry(String country){
         return studentService.findNameByCountry(country);
     }

@@ -35,6 +35,8 @@ public class TransactionService {
         transaction.setIssueOperation(true);
         transaction.setTransactionStatus(TransactionStatus.PENDING);
 
+    }
+    public String getTransactionInfo(int bookId, int cardId){
 
     }
 }

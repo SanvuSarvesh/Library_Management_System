@@ -44,7 +44,8 @@ public class StudentService {
     }
     public String updateMobileNo(Student newStudent){
         // First we'll try to fetch original data
-        Student origionalStudent = studentRepository.findById(newStudent.getAdmissionNo()).get();
+        Student origionalStudent = studentRepository.findById(newStudent
+                .getAdmissionNo()).get();
         origionalStudent.setMobileNo(newStudent.getMobileNo());
         studentRepository.save(origionalStudent);
         return "Mobile Number has been updated.";
