@@ -10,7 +10,7 @@ public class Student {
     private int admissionNo;
     private String name;
     private int age;
-    @Column(unique  = true)
+    @Column(unique = true)
     private String email;
     private String mobileNo;
     private String country;

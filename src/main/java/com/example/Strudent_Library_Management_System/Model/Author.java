@@ -24,7 +24,8 @@ public class Author {
         booksWritten =  new ArrayList<>();
     }
 
-    public Author(int id, String name, int age, String country, double rating, List<Books> booksWritten) {
+    public Author(int id, String name, int age, String country,
+                  double rating, List<Books> booksWritten) {
         this.id = id;
         this.name = name;
         this.age = age;

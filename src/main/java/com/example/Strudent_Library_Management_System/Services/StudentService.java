@@ -7,6 +7,8 @@ import com.example.Strudent_Library_Management_System.Repositories.StudentReposi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
 
@@ -30,5 +32,21 @@ public class StudentService {
         studentRepository.save(student);
 
         return "Student and Card has been added successfully.";
+    }
+
+    public String findNameByEmail(String email){
+        Student student = studentRepository.findByEmail(email);
+        return student.getName();
+    }
+    public List<Student> findNameByCountry(String country){
+        List<Student> listOfStudents = studentRepository.findByCountry(country);
+        return listOfStudents;
+    }
+    public String updateMobileNo(Student newStudent){
+        // First we'll try to fetch original data
+        Student origionalStudent = studentRepository.findById(newStudent.getAdmissionNo()).get();
+        origionalStudent.setMobileNo(newStudent.getMobileNo());
+        studentRepository.save(origionalStudent);
+        return "Mobile Number has been updated.";
     }
 }
